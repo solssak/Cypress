@@ -7,7 +7,7 @@
 
 describe("example counter app", () => {
   beforeEach(() => {
-    cy.visit("https://blackcoffee-study.github.io/js-counter-test/");
+    cy.visit("index.html");
   });
 
   it("counter의 초기값은 0이다.", () => {
