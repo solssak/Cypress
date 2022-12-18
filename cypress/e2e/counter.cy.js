@@ -7,7 +7,7 @@
 
 describe("example counter app", () => {
   beforeEach(() => {
-    cy.visit("index.html");
+    cy.visit("https://blackcoffee-study.github.io/js-counter-test/");
   });
 
   it("counter의 초기값은 0이다.", () => {
@@ -51,5 +51,10 @@ describe("example counter app", () => {
       cy.get(".increase-btn").click();
     }
     cy.get("#value").invoke("text").should("eq", "10");
+  });
+
+  it("버튼을 클릭 시 count가 0보다 작아지는 경우 감소하지 못한다. (Min 값이 0)", () => {
+    cy.get(".decrease-btn").click();
+    cy.get("#value").invoke("text").should("eq", "0");
   });
 });
