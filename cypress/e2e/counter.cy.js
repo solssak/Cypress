@@ -57,4 +57,10 @@ describe("example counter app", () => {
     cy.get(".decrease-btn").click();
     cy.get("#value").invoke("text").should("eq", "0");
   });
+
+  it("reset 버튼을 클릭 시 counter가 0으로 초기화된다.", () => {
+    cy.get(".increase-btn").click();
+    cy.get(".reset-btn").click();
+    cy.get("#value").invoke("text").should("eq", "0");
+  });
 });
